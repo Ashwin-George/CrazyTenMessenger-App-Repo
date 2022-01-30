@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "964044264625",
+    "project_id": "crazy-ten-messenger",
+    "storage_bucket": "crazy-ten-messenger.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:964044264625:android:56ee77f8d8c56fd62cfe90",
+        "android_client_info": {
+          "package_name": "com.example.android.crazytenmessenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "964044264625-lr4s48se3rd68qop1jgi17c1j5sn0amv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDebRcXHPz3LtFVBFqr0ULOvLRUSqijSrQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "964044264625-lr4s48se3rd68qop1jgi17c1j5sn0amv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

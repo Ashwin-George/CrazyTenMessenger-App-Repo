@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".auth.RegistrationActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        app:layout_constraintGuide_begin="301dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/guideline_2"
+        app:layout_constraintRight_toRightOf="@id/guideline_2"
+        app:layout_constraintTop_toTopOf="@id/guideline_1"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_1"
+        android:id="@+id/progress_bar_register"
+        android:visibility="gone"
+        />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/usermail_input_textbox"
+        style="@style/Widget.Design.TextInputLayout"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="36dp"
+        android:hint="Enter EmailName"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@id/userpswd_input_textbox"
+        app:layout_constraintLeft_toLeftOf="@id/guideline_2"
+        app:layout_constraintRight_toRightOf="@id/guideline_2"
+        app:layout_constraintTop_toTopOf="@id/guideline_3" />
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/userpswd_input_textbox"
+        style="@style/Widget.Design.TextInputLayout"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="36dp"
+        android:hint="Enter Password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@id/guideline_1"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintLeft_toLeftOf="@id/guideline_2"
+        app:layout_constraintRight_toRightOf="@id/guideline_2"
+        app:layout_constraintTop_toBottomOf="@id/usermail_input_textbox" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/cnfpswd_input_textbox"
+        app:layout_constraintTop_toBottomOf="@id/guideline_1"
+        app:layout_constraintLeft_toLeftOf="@id/guideline_2"
+        app:layout_constraintRight_toRightOf="@id/guideline_2"
+        app:layout_constraintBottom_toTopOf="@id/username_input_textbox"
+        android:textSize="16sp"
+        android:layout_marginBottom="36dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        style="@style/Widget.Design.TextInputLayout"
+        android:hint="Confirm Password"
+        />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/username_input_textbox"
+        app:layout_constraintTop_toBottomOf="@id/cnfpswd_input_textbox"
+        app:layout_constraintLeft_toLeftOf="@id/guideline_2"
+        app:layout_constraintRight_toRightOf="@id/guideline_4"
+        app:layout_constraintBottom_toTopOf="@id/registration_submit_button"
+        android:textSize="16sp"
+        android:layout_marginBottom="36dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        style="@style/Widget.Design.TextInputLayout"
+        android:hint="Enter a Username"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/registration_submit_button"
+        app:layout_constraintTop_toBottomOf="@id/guideline_4"
+        app:layout_constraintLeft_toLeftOf="@id/guideline_2"
+        app:layout_constraintRight_toRightOf="@id/guideline_4"
+        app:layout_constraintBottom_toTopOf="@id/login_user_intent"
+        android:text="Submit"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        />
+
+    <TextView
+        android:id="@+id/login_user_intent"
+        app:layout_constraintTop_toBottomOf="@id/registration_submit_button"
+        app:layout_constraintLeft_toLeftOf="@id/guideline_2"
+        app:layout_constraintRight_toRightOf="@id/guideline_2"
+        android:layout_marginTop="36dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Already User? Login Now"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
