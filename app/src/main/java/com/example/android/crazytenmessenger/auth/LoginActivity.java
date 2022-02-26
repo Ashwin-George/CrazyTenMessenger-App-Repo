@@ -30,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     private TextInputEditText userPswdInputTextBox;
     private Button loginSubmitButton;
     private TextView registrationIntentTextView;
+    private TextView forgotPasswordIntentTextView;
     private FirebaseAuth firebaseAuth;
     private ProgressBar progressBar;
 
@@ -41,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         userPswdInputTextBox=(TextInputEditText) findViewById(R.id.userpswd_login_textbox);
         loginSubmitButton=(Button)findViewById(R.id.login_submit_button);
         registrationIntentTextView=(TextView)findViewById(R.id.new_user_intent);
+        forgotPasswordIntentTextView=(TextView)findViewById(R.id.forgot_password_intent);
         progressBar=(ProgressBar) findViewById(R.id.progress_bar_login);
         firebaseAuth=FirebaseAuth.getInstance();
 
@@ -82,12 +84,20 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        forgotPasswordIntentTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(LoginActivity.this,PasswordResetActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 //    @Override
     protected void onStart() {
         if(getIntent().getExtras()==null){
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+//                startActivity(new Intent(LoginActivity.this, MainActivity.class));
         }
         super.onStart();
         FirebaseUser currentUser=

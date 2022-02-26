@@ -34,18 +34,21 @@ public class UserProfileActivity extends AppCompatActivity {
         usernameTextView=(TextView)findViewById(R.id.username_textview);
 
         mAuth=FirebaseAuth.getInstance();
-
-        Glide.with(UserProfileActivity.this).
-                load("https://helostatus.com/wp-content/uploads/2021/09/2021-profile-WhatsApp-hd.jpg")
-                .transform(new CircleCrop())
-                .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
-                .into(profileImageView);
+        String imageUri="https://helostatus.com/wp-content/uploads/2021/09/2021-profile-WhatsApp-hd.jpg";
 
         FirebaseUser curUser=mAuth.getCurrentUser();
         if(curUser!=null){
             usernameTextView.setText(curUser.getDisplayName());
             usermailTextView.setText(curUser.getEmail());
+            imageUri=curUser.getPhotoUrl().toString();
         }
+
+        Glide.with(UserProfileActivity.this).
+                load(imageUri)
+                .transform(new CircleCrop())
+                .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+                .into(profileImageView);
+
 
     }
 }

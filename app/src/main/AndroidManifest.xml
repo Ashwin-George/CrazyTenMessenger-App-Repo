@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CrazyTenMessenger">
         <activity
+            android:name=".auth.PasswordResetActivity"
+            android:exported="false" />
+        <activity
             android:name=".auth.UserProfileActivity"
             android:exported="false" />
         <activity

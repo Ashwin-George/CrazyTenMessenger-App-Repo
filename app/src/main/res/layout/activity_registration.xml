@@ -5,14 +5,56 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".auth.RegistrationActivity">
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/guideline_3"-->
+<!--        android:layout_margin="16dp">-->
+<!--        <ImageView-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="150dp"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--            app:layout_constraintRight_toRightOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            android:background="@drawable/shape_circle"-->
+<!--            android:src="@drawable/circular_image_profile_picture"-->
+<!--            app:layout_constraintCircleRadius="50dp"-->
+<!--            />-->
+
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/circular_image_profile_picture"
+        app:civ_border_width="4dp"
+        app:civ_border_color="@color/light_dark_blue"
+        app:layout_constraintLeft_toLeftOf="@id/guideline_2"
+        app:layout_constraintRight_toRightOf="@id/guideline_2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guideline_3"
+        android:id="@+id/profile_image_view"
+        />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintRight_toRightOf="@id/profile_image_view"
+        app:layout_constraintBottom_toBottomOf="@id/profile_image_view"
+        android:src="@android:drawable/ic_menu_camera"
+        android:id="@+id/profile_image_selector_button"
+        app:fabCustomSize="40dp"
+        />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-
-        app:layout_constraintGuide_begin="301dp" />
+        app:layout_constraintGuide_percent="0.5" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_2"
@@ -100,20 +142,21 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/username_input_textbox"
-        app:layout_constraintTop_toBottomOf="@id/cnfpswd_input_textbox"
-        app:layout_constraintLeft_toLeftOf="@id/guideline_2"
-        app:layout_constraintRight_toRightOf="@id/guideline_4"
-        app:layout_constraintBottom_toTopOf="@id/registration_submit_button"
-        android:textSize="16sp"
-        android:layout_marginBottom="36dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
+        style="@style/Widget.Design.TextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"
-        style="@style/Widget.Design.TextInputLayout"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="36dp"
         android:hint="Enter a Username"
-        />
+        android:inputType="text"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/registration_submit_button"
+        app:layout_constraintHorizontal_bias="0.348"
+        app:layout_constraintLeft_toLeftOf="@id/guideline_2"
+        app:layout_constraintRight_toRightOf="@id/guideline_4"
+        app:layout_constraintTop_toBottomOf="@id/cnfpswd_input_textbox" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
